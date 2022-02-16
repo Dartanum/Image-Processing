@@ -1,0 +1,4 @@
+build/
+build.vs.2022/
+bin.dbg/
+bin.rel/
