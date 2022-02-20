@@ -29,7 +29,7 @@ cv::Mat gammaCorrection(cv::Mat& source, double gammaCoefficient) {
     cv::pow(source, gammaCoefficient, result_64F);
     auto end = std::chrono::steady_clock::now();
 
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+    std::chrono::duration<double> duration = (end - start) * 1000;
     std::cout << "cv::pow execution time: " << duration.count() << " ms" << std::endl;
     result_64F.convertTo(result, CV_8UC1, 255);
 
@@ -47,7 +47,7 @@ cv::Mat gammaCorrectionOverrided(cv::Mat source, double gammaCoefficient) {
     }
     auto end = std::chrono::steady_clock::now();
 
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+    std::chrono::duration<double> duration = (end - start) * 1000;
     std::cout << "changing the value of cells execution time: " << duration.count() << " ms" << std::endl;
     source.convertTo(result, CV_8UC1);
 
