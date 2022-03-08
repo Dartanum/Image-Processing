@@ -15,8 +15,14 @@ int intensityFunction(int input) {
 
 cv::Mat visualisation(cv::Mat lookUpTable, int width, int height) {
 	int bin = width / 256;
-	cv::Mat diagram(width, height, CV_8UC1);
-	diagram = 255;
+	int thinkness = 1;
+	cv::Mat diagram(width, height, CV_8UC3);
+	diagram = cv::Scalar(255, 255, 255);
+	cv::Rect2i oX = {0, 0, thinkness, height};
+	cv::Rect2i oY = {0, height - thinkness, width, thinkness};
+	cv::rectangle(diagram, oX, cv::Scalar(0, 0, 255));
+	cv::rectangle(diagram, oY, cv::Scalar(0, 0, 255));
+
 	for (int i = 0; i < 512; i += bin) {
 		cv::Rect2i point = {i, height - bin - lookUpTable.at<uchar>(0, i / bin) * bin, bin, bin};
 		cv::rectangle(diagram, point, cv::Scalar(0, 0, 0));
