@@ -1,0 +1,92 @@
+[
+  {
+      "bottom-left": [317, 762],
+      "top-left": [379, 245],
+      "top-right": [1600, 235],
+      "bottom-right": [1658, 768]
+  },
+  {
+      "bottom-left": [267, 736],
+      "top-left": [304, 188],
+      "top-right": [1583, 164],
+      "bottom-right": [1629, 721]
+  },
+  {
+      "bottom-left": [225, 774],
+      "top-left": [174, 201],
+      "top-right": [1557, 223],
+      "bottom-right": [1501, 771]
+  },
+  {
+      "bottom-left": [190, 758],
+      "top-left": [255, 263],
+      "top-right": [1407, 271],
+      "bottom-right": [1444, 754]
+  },
+  {
+      "bottom-left": [128, 733],
+      "top-left": [123, 177],
+      "top-right": [1405, 162],
+      "bottom-right": [1408, 705]
+  },
+  {
+      "bottom-left": [194, 852],
+      "top-left": [97, 407],
+      "top-right": [1364, 428],
+      "bottom-right": [1281, 847]
+  },
+  {
+      "bottom-left": [32, 967],
+      "top-left": [76, 245],
+      "top-right": [1716, 243],
+      "bottom-right": [1737, 969]
+  },
+  {
+      "bottom-left": [70, 919],
+      "top-left": [115, 226],
+      "top-right": [1680, 234],
+      "bottom-right": [1700, 929]
+  },
+  {
+      "bottom-left": [66, 936],
+      "top-left": [113, 234],
+      "top-right": [1701, 235],
+      "bottom-right": [1722, 941]
+  },
+  {
+      "bottom-left": [115, 1804],
+      "top-left": [233, 222],
+      "top-right": [830, 255],
+      "bottom-right": [1019, 1775]
+  },
+  {
+      "bottom-left": [134, 1707],
+      "top-left": [249, 71],
+      "top-right": [892, 134],
+      "bottom-right": [936, 1700]
+  },
+  {
+      "bottom-left": [141, 1778],
+      "top-left": [143, 47],
+      "top-right": [847, 62],
+      "bottom-right": [933, 1728]
+  },
+  {
+      "bottom-left": [288, 1784],
+      "top-left": [307, 37],
+      "top-right": [932, 194],
+      "bottom-right": [911, 1655]
+  },
+  {
+      "bottom-left": [260, 1789],
+      "top-left": [265, 34],
+      "top-right": [895, 186],
+      "bottom-right": [891, 1653]
+  },
+  {
+      "bottom-left": [316, 1725],
+      "top-left": [335, 140],
+      "top-right": [905, 270],
+      "bottom-right": [897, 1621]
+  }
+]
