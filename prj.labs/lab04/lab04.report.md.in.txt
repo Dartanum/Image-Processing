@@ -19,86 +19,185 @@ https://github.com/Dartanum/Image-Processing/tree/master/prj.labs/lab04
 8. оцениваем качество выделение зоны и анализируем ошибки
 
 ### Результаты
-*frame_1_vid_1* ![](output/frame_1_vid_1.png)
-*frame_1_vid_2* ![](output/frame_1_vid_2.png)
-*frame_1_vid_3* ![](output/frame_1_vid_3.png)</br>
-Рис. 1. Исходные кадры из видеозаписей</br>
+Из снятых 5 видео было извлечено по 3 кадра (Рис. 1).
 
-К исходным кадрам применяется цветоредуцирование (Рис. 2).</br>
+<div style="display: flex; justify-content: space-between;">
+  <div style="margin-right: 5px">
+    <img src="output/frame_1_vid_1.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_1_vid_1</p>
+  </div>
+  <div style="margin-right: 5px">
+    <img src="output/frame_1_vid_2.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_1_vid_2</p>
+  </div>
+  <div>
+    <img src="output/frame_1_vid_3.png"/> 
+    <p style="margin-top: 0; font-size: 7pt;">frame_1_vid_3</p>
+  </div>
+</div>
+<i style="font-size: 10pt;">Рис. 1. Исходные кадры из видеозаписей</i>
+</br>
 
-*frame_grayscale_1_vid_1* ![](output/frame_grayscale_1_vid_1.png) 
-*frame_grayscale_1_vid_2* ![](output/frame_grayscale_1_vid_2.png) 
-*frame_grayscale_1_vid_3* ![](output/frame_grayscale_1_vid_3.png)</br>
-Рис. 2. Цветоредуцированные кадры</br>
+К исходным кадрам применяется цветоредуцирование (Рис. 2) - уменьшение количества каналов исходного изображения до одного
+при помощи функции cvtColor библиотеки OpenCV с параметром конвертации COLOR_BGR2BGRAY.</br>
 
-Далее цветоредуцированные изображения бинаризуются при помощи глобальной бинаризации OTSU (Рис. 3).</br>
+<div style="display: flex; justify-content: space-between">
+  <div style="margin-right: 5px">
+    <img src="output/frame_grayscale_1_vid_1.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_grayscale_1_vid_1</p>
+  </div>
+  <div style="margin-right: 5px">
+    <img src="output/frame_grayscale_1_vid_2.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_grayscale_1_vid_2</p>
+  </div>
+  <div>
+    <img src="output/frame_grayscale_1_vid_3.png"/> 
+    <p style="margin-top: 0; font-size: 7pt;">frame_grayscale_1_vid_3</p>
+  </div>
+</div>
+<i style="font-size: 10pt;">Рис. 2. Цветоредуцированные кадры</i>
+</br>
 
-*frame_bin_1_vid_1* ![](output/frame_bin_1_vid_1.png) 
-*frame_bin_1_vid_2* ![](output/frame_bin_1_vid_2.png) 
-*frame_bin_1_vid_3* ![](output/frame_bin_1_vid_3.png)</br>
-Рис. 3. Бинаризированные кадры</br>
+Далее цветоредуцированные изображения бинаризуются при помощи функции threshold библиотеки OpenCV, используя алгоритм выбора оптимального
+порогового значения OTSU (Рис. 3).</br>
 
-Над полученными изображениями производятся морфологические преобразования для удаления на них "дыр" и создания более четких границ (Рис. 4).</br>
-Используемые операции: closing, opening и делатация.</br>
+<div style="display: flex; justify-content: space-between">
+  <div style="margin-right: 5px">
+    <img src="output/frame_bin_1_vid_1.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_bin_1_vid_1</p>
+  </div>
+  <div style="margin-right: 5px">
+    <img src="output/frame_bin_1_vid_2.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_bin_1_vid_2</p>
+  </div>
+  <div>
+    <img src="output/frame_bin_1_vid_3.png"/> 
+    <p style="margin-top: 0; font-size: 7pt;">frame_bin_1_vid_3</p>
+  </div>
+</div>
+<i style="font-size: 10pt;">Рис. 3. Бинаризированные кадры</i>
+</br>
 
-*frame_morph_1_vid_1* ![](output/frame_morph_1_vid_1.png) 
-*frame_morph_1_vid_2* ![](output/frame_morph_1_vid_2.png) 
-*frame_morph_1_vid_3* ![](output/frame_morph_1_vid_3.png)</br>
-Рис. 4. Кадры после морфологической обработки</br>
+Над полученными изображениями производятся морфологические преобразования для удаления на них "дыр" и создания более четких границ (Рис. 4).
+Размер структурного элемента: 35 x 10 пикселей</br>
+Используемые операции: 
+1. closing
+2. opening
+3. делатация.</br>
+
+<div style="display: flex; justify-content: space-between">
+  <div style="margin-right: 5px">
+    <img src="output/frame_morph_1_vid_1.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_morph_1_vid_1</p>
+  </div>
+  <div style="margin-right: 5px">
+    <img src="output/frame_morph_1_vid_2.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_morph_1_vid_2</p>
+  </div>
+  <div>
+    <img src="output/frame_morph_1_vid_3.png"/> 
+    <p style="margin-top: 0; font-size: 7pt;">frame_morph_1_vid_3</p>
+  </div>
+</div>
+<i style="font-size: 10pt;">Рис. 4. Кадры после морфологической обработки</i>
+</br>
 
 Далее для получения маски производятся следующие действия:
-1. Нахождение наибольшей по площади компоненты связности (КС)
+1. Нахождение наибольшей по площади компоненты связности (КС) не включая базовую (площадь которой равняется площади изображения). Для нахождения всех КС применяется функция *connectedComponentsWithStats* библиотеки OpenCV
 2. На черное изображение накладывается область обрабатываемого кадра, входящая в КС
 3. Все оставшиеся КС закрашиваются черным цветом для "очистки" изображения
 4. Для закрашивания в белый цвет оставшихся внутри маски черных пикселей по белому изображению в горизонтальном направлении наносятся черные пиксели 
 с двух сторон до момента когда встретится первый белый пиксель на маске.</br>
 
-*frame_mask_1_vid_1* ![](output/frame_mask_1_vid_1.png) 
-*frame_mask_1_vid_2* ![](output/frame_mask_1_vid_2.png) 
-*frame_mask_1_vid_3* ![](output/frame_mask_1_vid_3.png)</br>
-Рис. 5. Полученные программно маски</br>
+<div style="display: flex; justify-content: space-between">
+  <div style="margin-right: 5px">
+    <img src="output/frame_mask_1_vid_1.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_mask_1_vid_1</p>
+  </div>
+  <div style="margin-right: 5px">
+    <img src="output/frame_mask_1_vid_2.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_mask_1_vid_2</p>
+  </div>
+  <div>
+    <img src="output/frame_mask_1_vid_3.png"/> 
+    <p style="margin-top: 0; font-size: 7pt;">frame_mask_1_vid_3</p>
+  </div>
+</div>
+<i style="font-size: 10pt;">Рис. 5. Полученные программно маски</i>
+</br>
 
-Для проверки качества полученных программно масок вручную задаются эталонные маски (Рис. 6)</br>
+Для проверки качества полученных программно масок вручную задаются эталонные маски в файле masks.json путем указания
+координат четырех углов маски (Рис. 6)</br>
 
-*frame_etalon_mask_1_vid_1* ![](output/frame_etalon_mask_1_vid_1.png) 
-*frame_etalon_mask_1_vid_2* ![](output/frame_etalon_mask_1_vid_2.png) 
-*frame_etalon_mask_1_vid_3* ![](output/frame_etalon_mask_1_vid_3.png)</br>
-Рис. 6. Эталонные маски</br>
+<div style="display: flex; justify-content: space-between">
+  <div style="margin-right: 5px">
+    <img src="output/frame_etalon_mask_1_vid_1.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_etalon_mask_1_vid_1</p>
+  </div>
+  <div style="margin-right: 5px">
+    <img src="output/frame_etalon_mask_1_vid_2.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_etalon_mask_1_vid_2</p>
+  </div>
+  <div>
+    <img src="output/frame_etalon_mask_1_vid_3.png"/> 
+    <p style="margin-top: 0; font-size: 7pt;">frame_etalon_mask_1_vid_3</p>
+  </div>
+</div>
+<i style="font-size: 10pt;">Рис. 6. Эталонные маски</i>
+</br>
 
 Для визуализации отличий масок используется наложение их на исходные кадры в разных цветовых каналах (Рис. 7):
 * Красный - программная маска
 * Зеленый - эталонная маска
 * Желтый - пересечение масок</br>
 
-*frame_concatenated_masks_1_vid_1* ![](output/frame_concatenated_masks_1_vid_1.png) 
-*frame_concatenated_masks_1_vid_2* ![](output/frame_concatenated_masks_1_vid_2.png) 
-*frame_concatenated_masks_1_vid_3* ![](output/frame_concatenated_masks_1_vid_3.png)</br>
-Рис. 7. Отличия масок</br>
+<div style="display: flex; justify-content: space-between">
+  <div style="margin-right: 5px">
+    <img src="output/frame_concatenated_masks_1_vid_1.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_concatenated_masks_1_vid_1</p>
+  </div>
+  <div style="margin-right: 5px">
+    <img src="output/frame_concatenated_masks_1_vid_2.png"/>
+    <p style="margin-top: 0; font-size: 7pt;">frame_concatenated_masks_1_vid_2</p>
+  </div>
+  <div>
+    <img src="output/frame_concatenated_masks_1_vid_3.png"/> 
+    <p style="margin-top: 0; font-size: 7pt;">frame_concatenated_masks_1_vid_3</p>
+  </div>
+</div>
+<i style="font-size: 10pt;">Рис. 7. Отличия масок</i>
+</br>
 
-При сравнении масок можно заметить, что маски купюр номиналом 100 и 1000 рублей определены довольно точно, что нельзя сказать о купюре номиналом 500 рублей.
-Маска на ней вычислилась плохо из-за невысокого контраста фона и купюры, а также неравномерно распределенной яркости.
+При сравнении масок можно заметить, что маски купюр номиналом 100 и 1000 рублей определены довольно точно, что нельзя сказать о купюре номиналом 500 рублей - маска на ней вычислилась плохо из-за невысокого контраста фона и купюры, а также неравномерно распределенной яркости.
 
 ### Точность программных масок
-Точностью программной маски относительно эталонной считается отношение пересечения пикселей масок на их объединение.
+Точностью программной маски относительно эталонной считается отношение пересечения пикселей масок на их объединение согласно формуле:
+$$accuracy = \frac{target ∩ predicted}{target ∪ predicted}$$
+где </br>*target* - множество пикселей программной маски
+    </br>*predicted* - множество пикселей эталонной маски</br>
 Полученная оценка показывает степень соответствия от 0 до 1, где чем ближе к 1, тем идентичнее маски.
 
-| Название файла       | Точность  |
-| -------------------- |:---------:|
-| frame_1_vid_1.png    | 0.529942  |
-| frame_2_vid_1.png    | 0.609547  |
-| frame_3_vid_1.png    | 0.607686  |
-| frame_1_vid_2.png    | 0.978552  |
-| frame_2_vid_2.png    | 0.958585  |
-| frame_3_vid_2.png    | 0.963971  |
-| frame_1_vid_3.png    | 0.981857  |
-| frame_2_vid_3.png    | 0.987018  |
-| frame_3_vid_3.png    | 0.985940  |
-| frame_1_vid_4.png    | 0.987103  |
-| frame_2_vid_4.png    | 0.988804  |
-| frame_3_vid_4.png    | 0.987940  |
-| frame_1_vid_5.png    | 0.983916  |
-| frame_2_vid_5.png    | 0.982554  |
-| frame_3_vid_5.png    | 0.987095  |
+| Название файла       | Точность|
+| -------------------- |:-------:|
+| frame_1_vid_1.png    |  0.529  |
+| frame_2_vid_1.png    |  0.609  |
+| frame_3_vid_1.png    |  0.607  |
+| frame_1_vid_2.png    |  0.978  |
+| frame_2_vid_2.png    |  0.958  |
+| frame_3_vid_2.png    |  0.963  |
+| frame_1_vid_3.png    |  0.981  |
+| frame_2_vid_3.png    |  0.987  |
+| frame_3_vid_3.png    |  0.985  |
+| frame_1_vid_4.png    |  0.987  |
+| frame_2_vid_4.png    |  0.988  |
+| frame_3_vid_4.png    |  0.987  |
+| frame_1_vid_5.png    |  0.983  |
+| frame_2_vid_5.png    |  0.982  |
+| frame_3_vid_5.png    |  0.987  |
+
+Ниже (Рис. 8) представлена визуализация представленных данных, по которой видно, что точность программно вычесленных масок достаточно высокая: на 12 кадрах точность программных масок близка к эталонной. На 3 кадра, точность маски которых около 0.5-0.6 - та самая купюра номиналом 500 рублей.</br>
+![](Destribution.jpg)  
+<i style="font-size: 10pt;">Рис. 8. Визуализация распределения точностей программных масок</i>
 
 ### Текст программы
 

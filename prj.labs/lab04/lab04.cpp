@@ -215,7 +215,7 @@ int main() {
 			concatenated_masks = createConcatenatedMasks(frame, programmed_mask, etalon_mask);
 			cv::imwrite(createFileName(i, j, "concatenated_masks_"), concatenated_masks);
 
-			out << frameFileName.substr(OUTPUT_DIR.size()) << " " << std::to_string(calculateAccuracy(programmed_mask, etalon_mask)) << '\n';
+			out << frameFileName.substr(OUTPUT_DIR.size()) << " " << std::setprecision(3) << calculateAccuracy(programmed_mask, etalon_mask) << '\n';
 			ind++;
 		}
 	}
